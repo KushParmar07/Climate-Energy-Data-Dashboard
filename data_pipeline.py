@@ -2,9 +2,11 @@ import pandas as pd
 import os
 import glob
 import get_data
+import train_model_A
 import weather
 import analysis
 import feature_transformation
+import train_model_B
 
 
 def merge_data():
@@ -48,6 +50,8 @@ def main():
     merge_data()
     analysis.analyze_data()
     feature_transformation.main()
+    train_model_A.main()
+    train_model_B.main()
     cleanup_files()
     print("Done!")
 
