@@ -135,7 +135,7 @@ def render_dashboard(demand, supply_mix, inputs):
 
 
     with c1:
-        st.subheader("🔋 Power Generation Mix")
+        st.subheader("Power Generation Mix")
 
         fig_bar = px.bar(
             chart_data, x='Source', y='MW', color='Source',
@@ -145,7 +145,7 @@ def render_dashboard(demand, supply_mix, inputs):
         st.plotly_chart(fig_bar, use_container_width=True)
 
     with c2:
-        st.subheader("Market Share")
+        st.subheader("Energy Production Breakdown")
 
         fig_donut = px.pie(
             chart_data, values='MW', names='Source', hole=0.4,
@@ -155,11 +155,11 @@ def render_dashboard(demand, supply_mix, inputs):
         st.plotly_chart(fig_donut, use_container_width=True)
 
     if demand > 30000:
-        st.error(f"🚨 CRITICAL ALERT: SYSTEM OVERLOAD! Demand ({demand:,.0f} MW) exceeds grid capacity of 30,000 MW!")
+        st.error(f"SYSTEM OVERLOAD! Demand ({demand:,.0f} MW) exceeds grid capacity of 30,000 MW!")
     elif gas_mw == 0:
-        st.success("🌟 PURE CLEAN ENERGY ACHIEVED! The grid is running on 0% Carbon.")
+        st.success("PURE CLEAN ENERGY ACHIEVED! The grid is running on 0% Carbon.")
     else:
-        st.info("ℹ️ Grid Status: Stable. Gas is active to meet peak demand.")
+        st.info("Grid Status: Stable. Gas is active to meet peak demand.")
 
 
 
