@@ -9,7 +9,7 @@ def analyze_data():
         'WIND': 0,
         'SOLAR': 0,
         'GAS': 490,
-        'BIOFUEL': 30
+        'BIOFUEL': 3
     }
 
     df['Factor'] = df['Fuel'].map(emission_factors).fillna(0)

@@ -4,6 +4,7 @@ import glob
 import get_data
 import weather
 import analysis
+import feature_transformation
 
 
 def merge_data():
@@ -46,6 +47,7 @@ def main():
     weather.main()
     merge_data()
     analysis.analyze_data()
+    feature_transformation.main()
     cleanup_files()
     print("Done!")
 

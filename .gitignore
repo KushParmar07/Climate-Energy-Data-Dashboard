@@ -1,0 +1,10 @@
+# Ignore Data Files
+*.csv
+*.xlsx
+
+# Ignore Python Cache
+__pycache__/
+
+# Ignore Model Files (Too big!)
+*.pkl
+*.joblib
