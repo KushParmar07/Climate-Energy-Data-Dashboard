@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\master_energy_history_with_weather.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
