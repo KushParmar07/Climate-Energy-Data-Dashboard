@@ -38,14 +38,14 @@ def create_model(df):
     X_test = test_data[features]
     y_test = test_data[targets]
 
-    model = MultiOutputRegressor(RandomForestRegressor(n_estimators=100, random_state=42))
+    model = RandomForestRegressor(n_estimators=50, max_depth=15, random_state=42)
     model.fit(X_train, y_train)
 
     predictions = model.predict(X_test)
     mae = mean_absolute_error(y_test, predictions)
     print(f"MAE: {mae}")
 
-    joblib.dump(model, 'model_B.pkl')
+    joblib.dump(model, 'model_B.pkl', compress=3)
     print("Model saved!")
 
 

@@ -20,7 +20,7 @@ def main():
     X_test = test_df[features]
     y_test = test_df[target]
 
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model = RandomForestRegressor(n_estimators=50, max_depth=15, random_state=42)
     model.fit(X_train, y_train)
 
     predictions = model.predict(X_test)
@@ -28,14 +28,14 @@ def main():
     print(f"MAE: {mae}")
 
 
-    plt.figure(figsize=(12, 8))
-    plt.plot(y_test.values[:200], label="Actual Demand", color='blue')
-    plt.plot(predictions[:200], label="Predicted Demand", color='red', linestyle='--')
-    plt.title('Reality vs AI Prediction (First 200 Hours of 2024)')
-    plt.legend()
-    plt.show()
+    # plt.figure(figsize=(12, 8))
+    # plt.plot(y_test.values[:200], label="Actual Demand", color='blue')
+    # plt.plot(predictions[:200], label="Predicted Demand", color='red', linestyle='--')
+    # plt.title('Reality vs AI Prediction (First 200 Hours of 2024)')
+    # plt.legend()
+    # plt.show()
 
-    joblib.dump(model, 'model_A.pkl')
+    joblib.dump(model, 'model_A.pkl', compress=3)
     print("Model saved!")
 
 
