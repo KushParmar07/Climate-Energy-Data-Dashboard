@@ -87,7 +87,7 @@ def run_predictions(model_a, model_b, inputs):
 
 
 def render_dashboard(demand, supply_mix, inputs):
-    st.title("⚡ Ontario Energy Grid Simulator")
+    st.title("Ontario Energy Grid Simulator")
 
     date_str = inputs['date'].strftime("%B %d, %Y")
     st.markdown(f"**Scenario:** {date_str} at {inputs['hour']}:00 | **Temp:** {inputs['temperature']}°C | **Wind:** {inputs['wind_speed']} km/h")
